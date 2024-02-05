@@ -1,46 +1,43 @@
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-      rel="stylesheet"
-    />
-    <title>Encriptador de Texto</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main>
-      <div class="container">
-        <img src="assets/Logo.svg" alt="Logo de Alura" />
-        <div class="texto"><h1>Ingrese su texto aquí</h1></div>
-        <div
-          class="rectangulo"
-          style="border: 1px solid black"
-          style="border-radius: 32px"
-        >
-          <img
-            src="assets/Figura.png"
-            alt="Figura de persona usando una lupa"
-          />
-          <h2>Ningún mensaje fue encontrado</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            sint nam modi, enim qui ut, nesciunt accusamus ratione ea facilis
-            obcaecati eveniet eaque harum. Harum, nemo. Consequatur inventore
-            quam nesciunt perferendis cupiditate saepe, aspernatur consectetur
-            cumque molestias tempore corrupti nemo mollitia, voluptas animi iure
-            officia. Magnam vel necessitatibus eius sequi.
-          </p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <title>Encriptador de Texto</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <header>
+        <img src="assets/Logo.svg" id="logo" alt="Logo de Alura" />
+      </header>
+      <div class="texto">
+        <h1>Ingrese su texto aquí</h1>
+        <div class="opciones">
+          <p id="advertencia">
+            <img src="assets/signo-de-exclamacion.png" alt="Icono de advertencia"/> 
+            Solo letras minúsculas y sin acentos</p>
+          <div class="botones">
+          <button id="encriptar">Encriptar</button>
+          <button id="desencriptar">Desencriptar</button>
         </div>
-        <div class="botones">
-          <button>Encriptar</button>
-          <button>Desencriptar</button>
         </div>
       </div>
-    </main>
-    <script src="app.js"></script>
-  </body>
+      <div class="rectangulo">
+        <img src="assets/Figura.png" alt="Figura de persona usando una lupa" />
+        <h2>Ningún mensaje fue encontrado</h2>
+        <p>
+          Ingresa el texto que desees encriptar o desencriptar.
+        </p>
+      </div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+
 </html>
