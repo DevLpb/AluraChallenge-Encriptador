@@ -16,24 +16,27 @@
       <header>
         <img src="assets/Logo.svg" id="logo" alt="Logo de Alura" />
       </header>
-      <section class="entrada">
+      <section class="seccion-entrada">
         <textarea id="texto-entrada" placeholder="Ingrese el texto"></textarea>
         <div class="opciones">
           <p id="advertencia">
             <img src="assets/signo-de-exclamacion.png" alt="Icono de advertencia"/> 
             Solo letras minúsculas y sin acentos</p>
           <div class="botones">
-          <button id="encriptar">Encriptar</button>
-          <button id="desencriptar">Desencriptar</button>
+          <button onclick="encriptar()" id="boton-encriptar">Encriptar</button>
+          <button onclick="desencriptar()" id="boton-desencriptar">Desencriptar</button>
         </div>
         </div>
       </section>
-      <section class="salida">
+      <section class="seccion-salida">
+        <textarea id="texto-salida">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum ducimus ipsa eos itaque quo molestias. Perspiciatis consequuntur sequi dolorem ad aut quod, harum corrupti atque, saepe magni dicta soluta praesentium ipsam adipisci vel quasi dignissimos nobis rem quaerat repellat voluptates aspernatur? Eveniet accusantium nostrum sit quo quasi non deleniti ut earum dolores laudantium nesciunt accusamus aperiam eos, atque harum similique libero cupiditate placeat, sunt praesentium nulla mollitia a maiores. Quas eius impedit, veritatis cum voluptate molestias, accusantium porro labore architecto, eos rem maiores sapiente voluptas ipsum numquam voluptates! Saepe dicta tempore, laudantium sunt perspiciatis praesentium! Cumque dolorem rem dolor provident!</textarea>
         <img src="assets/Figura.png" id="figura" alt="Figura de persona usando una lupa" />
-        <h2>Ningún mensaje fue encontrado</h2>
-        <p>
-          Ingresa el texto que desees encriptar o desencriptar.
-        </p>
+        <div id="mensaje">
+          <h2>Ningún mensaje fue encontrado</h2>
+          <p>
+            Ingresa el texto que desees encriptar o desencriptar.
+          </p>
+        </div>
       </section>
     </div>
   </main>
