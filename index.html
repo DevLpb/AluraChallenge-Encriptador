@@ -17,7 +17,7 @@
         <img src="assets/Logo.svg" id="logo" alt="Logo de Alura" />
       </header>
       <section class="seccion-entrada">
-        <textarea id="texto-entrada" placeholder="Ingrese el texto"></textarea>
+        <textarea id="texto-entrante" rows="10" placeholder="Ingrese el texto"></textarea>
         <div class="opciones">
           <p id="advertencia">
             <img src="assets/signo-de-exclamacion.png" alt="Icono de advertencia"/> 
@@ -29,14 +29,15 @@
         </div>
       </section>
       <section class="seccion-salida">
-        <textarea id="texto-encriptado" readonly></textarea>
+        <textarea id="texto-saliente" readonly></textarea>
         <img src="assets/Figura.png" id="figura" alt="Figura de persona usando una lupa" />
         <div id="mensaje">
-          <h2>Ningún mensaje fue encontrado</h2>
-          <p>
+          <h2 id="titulo-mensaje">Ningún mensaje fue encontrado</h2>
+          <p id="info-mensaje">
             Ingresa el texto que desees encriptar o desencriptar.
           </p>
         </div>
+        <button onclick="copiar()" id="boton-copiar">Copiar</button>
       </section>
     </div>
   </main>

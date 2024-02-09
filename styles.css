@@ -33,7 +33,7 @@ header {
     justify-content: space-between;
 }
 
-#texto-entrada {
+#texto-entrante {
     font-size: 32px;
     font-weight: 400;
     color: #0A3871;
@@ -70,7 +70,7 @@ header {
     justify-content: space-between;
 }
 
-#boton-encriptar, #boton-desencriptar {
+#boton-encriptar, #boton-desencriptar, #boton-copiar {
     width: 45%;
     padding: 24px;
     border-radius: 24px;
@@ -92,6 +92,17 @@ header {
 #boton-desencriptar:hover {
     background-color: #EFF1FA;
 }
+
+#boton-copiar {
+    border: 1px solid #0A3871;
+    color: #0A3871;
+    justify-content: center; 
+    display: none;
+}
+
+#boton-copiar:hover {
+    background-color: #E6E6E6;
+}
 /* ----------------------------- */
 
 /* Estilos relacionados a la sección de salida de texto */
@@ -109,7 +120,7 @@ header {
     width: 30%;
 }
 
-#texto-encriptado {
+#texto-saliente {
     display: none;
     font-size: 24px;
     font-weight: 400;
@@ -119,7 +130,7 @@ header {
     line-height: 36px;
     background-color: transparent;
     resize: none;
-    /*border: none;*/
+    border: none;
     outline: none;
 }
 
