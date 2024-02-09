@@ -109,7 +109,7 @@ header {
     width: 30%;
 }
 
-#texto-salida {
+#texto-encriptado {
     display: none;
     font-size: 24px;
     font-weight: 400;
