@@ -5,11 +5,11 @@
 
 body {
     margin: 0;
+    background-color: #F3F5FC;
 }
 .container {
     display: flex;
     height: 100%;
-    background-color: #F3F5FC;
     justify-content: space-around;
     padding: 1%;
 }
@@ -147,4 +147,55 @@ header {
     width: 70%;
     min-width: 150px;
 }
-/* ----------------------------- */
+/* ----------------------------- */ 
+
+/* Media Queries */
+
+@media (max-width: 1440px) {
+    #figura {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) { 
+    #figura {
+        display: none;
+    } 
+
+    .container {
+        flex-direction: column;
+    }
+    
+    .header {
+        width: 100%;
+        height: auto;
+    }
+    .seccion-entrada {
+        width: 100%;
+    }
+
+    .seccion-salida, .opciones {
+        width: 90%;
+        height: auto;
+        align-self: center;
+        margin: 5%;
+    }
+
+    #boton-copiar {
+        width: 80%;
+        margin-bottom: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .botones {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    #boton-encriptar, #boton-desencriptar {
+        width: 100%;
+    }
+
+}

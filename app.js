@@ -1,5 +1,6 @@
 let figura = document.getElementById("figura");
 let mensaje = document.getElementById("mensaje");
+let seccionSalida = document.querySelector(".seccion-salida");
 let tituloMensaje = document.getElementById("titulo-mensaje");
 let infoMensaje = document.getElementById("info-mensaje");
 let botonCopiar = document.getElementById("boton-copiar");
@@ -11,11 +12,16 @@ let textoSaliente = document.getElementById("texto-saliente");
 // Captura el contenido del texto entrante //
 textoEntrante.addEventListener("input", function () {
   valorTextoEntrante = textoEntrante.value;
+  console.log(valorTextoEntrante);
 });
 
+// Establece las propiedades o valores de los contenidos iniciales, evita que la imagen se muestre en dispositivos móviles. //
 function condicionesIniciales() {
-  figura.style.display = "block";
+  if (window.innerWidth > 768) {
+    figura.style.display = "block";
+  }
   mensaje.style.display = "block";
+  seccionSalida.style.height = "auto"; 
   tituloMensaje.textContent = "Ningún mensaje fue encontrado";
   infoMensaje.textContent = "Ingresa el texto que desees encriptar o desencriptar.";
   textoSaliente.style.display = "none";
@@ -28,7 +34,7 @@ function condicionesIniciales() {
         condicionesIniciales();
      }
  }
-// Captura el contenido del texto entrante (comprueba si está vacío) //
+// Captura el contenido del texto entrante (comprueba si está vacío y ejecuta la función) //
 textoEntrante.addEventListener("input", verificarEntrada);
 
 
@@ -54,6 +60,9 @@ function encriptar() {
   }
 
   // Si pasa la verificación, oculta y muestra los elementos del área.
+    if (window.innerWidth <= 768) {
+      seccionSalida.style.height = "50%";
+    }
     figura.style.display = "none";
     mensaje.style.display = "none";
     textoSaliente.style.display = "block";
@@ -69,6 +78,10 @@ function encriptar() {
   textoSaliente.value = textoCifrado;
 }
 
+textoEntrante.addEventListener("input", function () {
+  valorTextoEntrante = textoEntrante.value;
+  console.log(valorTextoEntrante);
+});
 
 // Función de desencriptado //
 function desencriptar() {
@@ -82,6 +95,9 @@ function desencriptar() {
 }
 
     // Si pasa la verificación, oculta y muestra los elementos del área.
+    if (window.innerWidth <= 768) {
+      seccionSalida.style.height = "50%";
+    }
     figura.style.display = "none";
     mensaje.style.display = "none";
     textoSaliente.style.display = "block";
