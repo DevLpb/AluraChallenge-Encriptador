@@ -12,7 +12,6 @@ let textoSaliente = document.getElementById("texto-saliente");
 // Captura el contenido del texto entrante //
 textoEntrante.addEventListener("input", function () {
   valorTextoEntrante = textoEntrante.value;
-  console.log(valorTextoEntrante);
 });
 
 // Establece las propiedades o valores de los contenidos iniciales, evita que la imagen se muestre en dispositivos móviles. //
@@ -37,8 +36,31 @@ function condicionesIniciales() {
 // Captura el contenido del texto entrante (comprueba si está vacío y ejecuta la función) //
 textoEntrante.addEventListener("input", verificarEntrada);
 
+// Funciones en caso de fallo o éxito al encriptar o desencriptar
+// Cambian las propiedades de los elementos HTML para ocultarlos y mostrar otra información.
+function mensajeValido() {
+  if (window.innerWidth <= 768) {
+    seccionSalida.style.height = "50%";
+  }
+    figura.style.display = "none";
+    mensaje.style.display = "none";
+    textoSaliente.style.display = "block";
+    botonCopiar.style.display = "flex";
+}
 
-/* Claves de encriptación */
+
+function mensajeNoValido() {
+  if (window.innerWidth > 768) {
+    figura.style.display = "block";
+  }
+    tituloMensaje.textContent = "Mensaje no aceptado";
+    infoMensaje.textContent = "Recuerda que solo se aceptan letras minúsculas y sin acentos";
+    mensaje.style.display = "block";
+    botonCopiar.style.display = "none";
+    textoSaliente.style.display = "none";
+  }
+
+  /* Claves de encriptación */
 
 let claves = {
   a: "ai",
@@ -46,28 +68,20 @@ let claves = {
   i: "imes",
   o: "ober",
   u: "ufat",
-};
+ };
 
-// Función de encriptación //
+  // Función de encriptación //
 function encriptar() {
   // Verifica si el texto es apto para encriptar.
-  // Si el texto contiene mayúsculas o caracteres especiales, no lo encripta.
+  // Si el texto contiene mayúsculas o caracteres especiales, no continúa con la encriptación. Llama a la función para el caso de fallido.
     let regExp = /^[a-z ]+$/g;
         if (!regExp.test(valorTextoEntrante)) {
-            tituloMensaje.textContent = "Mensaje no aceptado";
-            infoMensaje.textContent ="Recuerda que solo se aceptan letras minúsculas y sin acentos";
+          mensajeNoValido();
         return;
   }
 
-  // Si pasa la verificación, oculta y muestra los elementos del área.
-    if (window.innerWidth <= 768) {
-      seccionSalida.style.height = "50%";
-    }
-    figura.style.display = "none";
-    mensaje.style.display = "none";
-    textoSaliente.style.display = "block";
-    botonCopiar.style.display = "flex";
-
+  // Si pasa la verificación, llama a la función para el caso exitoso y continúa con la encriptación.
+    mensajeValido();
 
   // Encriptación
   // Busca las coincidencias de la expresión regular y las reemplaza por los valores de las propiedades del objeto "claves"
@@ -78,31 +92,17 @@ function encriptar() {
   textoSaliente.value = textoCifrado;
 }
 
-textoEntrante.addEventListener("input", function () {
-  valorTextoEntrante = textoEntrante.value;
-  console.log(valorTextoEntrante);
-});
-
 // Función de desencriptado //
 function desencriptar() {
   // Verifica si el texto es apto para encriptar.
-  // Si el texto contiene mayúsculas o caracteres especiales, no lo encripta.
+  // Si el texto contiene mayúsculas o caracteres especiales, no lo desencripta. Llama a la función del caso fallido.
     let regExp = /^[a-z ]+$/g;
         if (!regExp.test(valorTextoEntrante)) {
-            tituloMensaje.textContent = "Mensaje no aceptado";
-            infoMensaje.textContent ="Recuerda que solo se aceptan letras minúsculas y sin acentos";
+            mensajeNoValido();
         return;
 }
-
-    // Si pasa la verificación, oculta y muestra los elementos del área.
-    if (window.innerWidth <= 768) {
-      seccionSalida.style.height = "50%";
-    }
-    figura.style.display = "none";
-    mensaje.style.display = "none";
-    textoSaliente.style.display = "block";
-    botonCopiar.style.display = "flex";
-
+    // Si pasa la verificación, llama a la función del caso exitoso y continúa con el proceso.
+        mensajeValido();
 
     // Desencriptado
     // Busca las coincidencias de la expresión regular y las reemplaza, compara los valores de las propiedades del objeto "claves" y si son iguales, las reemplaza por el nombre de la propiedad.
