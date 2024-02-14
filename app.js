@@ -48,7 +48,6 @@ function mensajeValido() {
     botonCopiar.style.display = "flex";
 }
 
-
 function mensajeNoValido() {
   if (window.innerWidth > 768) {
     figura.style.display = "block";
@@ -62,7 +61,7 @@ function mensajeNoValido() {
 
   /* Claves de encriptación */
 
-let claves = {
+const claves = {
   a: "ai",
   e: "enter",
   i: "imes",
@@ -74,7 +73,7 @@ let claves = {
 function encriptar() {
   // Verifica si el texto es apto para encriptar.
   // Si el texto contiene mayúsculas o caracteres especiales, no continúa con la encriptación. Llama a la función para el caso de fallido.
-    let regExp = /^[a-z ]+$/g;
+    let regExp = /^[a-z \n]+$/g;
         if (!regExp.test(valorTextoEntrante)) {
           mensajeNoValido();
         return;
@@ -96,7 +95,7 @@ function encriptar() {
 function desencriptar() {
   // Verifica si el texto es apto para encriptar.
   // Si el texto contiene mayúsculas o caracteres especiales, no lo desencripta. Llama a la función del caso fallido.
-    let regExp = /^[a-z ]+$/g;
+    let regExp = /^[a-z \n]+$/g;
         if (!regExp.test(valorTextoEntrante)) {
             mensajeNoValido();
         return;
@@ -117,8 +116,7 @@ function desencriptar() {
     textoSaliente.value = textoCifrado;
     }
 
-    // Función de copiar //
+    // Función de copiar //s
     function copiar() {
-
       navigator.clipboard.writeText(textoSaliente.value);
     }
