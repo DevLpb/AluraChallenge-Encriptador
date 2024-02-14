@@ -120,3 +120,9 @@ function desencriptar() {
     function copiar() {
       navigator.clipboard.writeText(textoSaliente.value);
     }
+
+    /* Función extra para cambiar de tema */
+    function cambiarTema() {
+      //test//
+      document.documentElement.style.setProperty('--colorPrimario', "#FFFFFF");
+    }

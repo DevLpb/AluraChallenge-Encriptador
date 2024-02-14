@@ -1,3 +1,14 @@
+:root {
+    --colorFondo:#F3F5FC;
+    --colorPrimario: #0A3871;
+    --colorPrimarioHover: #072B61;
+    --colorSecundario: #495057;
+    --colorSecundarioStrong: #343A40;
+    --colorTerciario: #FFFFFF;
+    --colorTerciarioHover: #D8DFE8;
+    --colorSombra: #00000014;
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
@@ -5,8 +16,9 @@
 
 body {
     margin: 0;
-    background-color: #F3F5FC;
+    background-color: var(--colorFondo);
 }
+
 .container {
     display: flex;
     height: 100%;
@@ -15,9 +27,12 @@ body {
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
-    float: inline-start;
-    height: 48px;
+    height: 100px;
     top: 40px;
 }
 #logo {
@@ -36,7 +51,7 @@ header {
 #texto-entrante {
     font-size: 32px;
     font-weight: 400;
-    color: #0A3871;
+    color: var(--colorPrimario);
     background-color: transparent;
     resize: none;
     border: none;
@@ -44,7 +59,7 @@ header {
     margin-top: 15%;
 }
 #texto-entrada::placeholder {
-    color: #0A3871;
+    color: var(--colorPrimario);
     font-weight: 400;
 }
 
@@ -55,7 +70,7 @@ header {
 #advertencia {
     display:flex;
     font-size: 16px;
-    color: #495057;
+    color: var(--colorSecundario);
 }
 
 #advertencia > img {
@@ -81,32 +96,32 @@ header {
 }
 
 #boton-encriptar {
-    background-color: #0A3871;
-    color: #FFFFFF;
+    background-color: var(--colorPrimario);
+    color: var(--colorTerciario);
 }
 #boton-encriptar:hover {
-    background-color: #072B61;
+    background-color: var(--colorPrimarioHover);
 }
 
 #boton-desencriptar {
     background-color: transparent;
-    border: 1px solid #0A3871;
-    color: #0A3871;
+    border: 1px solid var(--colorPrimario);
+    color: var(--colorPrimario);
 }
 #boton-desencriptar:hover {
-    background-color:#D8DFE8;
+    background-color: var(--colorTerciarioHover);
 }
 
 #boton-copiar {
-    border: 1px solid #0A3871;
-    color: #0A3871;
+    border: 1px solid var(--colorPrimario);
+    color: var(--colorPrimario);
     background-color: transparent;
     justify-content: center; 
     display: none;
 }
 
 #boton-copiar:hover {
-    background-color: #E6E6E6;
+    background-color: var(--colorTerciarioHover);
 }
 /* ----------------------------- */
 
@@ -120,8 +135,8 @@ header {
     text-wrap: wrap;
     border-radius: 32px;
     padding: 2%;
-    background-color: #FFFFFF;
-    box-shadow: 0px 24px 32px -8px #00000014;
+    background-color: var(--colorTerciario);
+    box-shadow: 0px 24px 32px -8px var(--colorSombra);
     width: 30%;
 }
 
@@ -129,7 +144,7 @@ header {
     display: none;
     font-size: 24px;
     font-weight: 400;
-    color: #495057;
+    color: var(--colorSecundario);
     width: 100%;
     height: 100%;
     line-height: 36px;
@@ -141,10 +156,10 @@ header {
 
 #mensaje h2 {
     font-weight: 700;
-    color: #343A40;
+    color: var(--colorSecundarioStrong);
 }
 #mensaje p {
-    color: #495057;
+    color: var(--colorSecundario);
     font-weight: 400;
 }
 
@@ -159,6 +174,67 @@ footer {
     justify-content: center;
     font-size: 18px;
 }
+
+/* --------------- Estilos extra para botón switch de cambio de tema --------------- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
 
 /* Media Queries */
 
@@ -177,12 +253,19 @@ footer {
         flex-direction: column;
     }
     
-    .header {
+    header {
         width: 100%;
         height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
     .seccion-entrada {
         width: 100%;
+    }
+
+    #texto-entrante {
+        margin-left: 5%;
     }
 
     .seccion-salida, .opciones {
