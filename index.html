@@ -13,9 +13,11 @@
 <body>
   <main class="container">
       <header>
-        <img src="assets/Logo.svg" id="logo" alt="Logo de Alura" />
+        <a href="https://www.aluracursos.com/" target="_blank">
+          <img src="assets/Logo.svg" id="logo" alt="Logo de Alura" />
+        </a>
         <label class="switch">
-          <input onclick="cambiarTema()" type="checkbox">
+          <input onchange="cambiarTema()" id="checkbox" type="checkbox">
           <span class="slider round"></span>
         </label>
       </header>
@@ -23,7 +25,7 @@
         <textarea id="texto-entrante" rows="10" placeholder="Ingrese el texto"></textarea>
         <div class="opciones">
           <p id="advertencia">
-            <img src="assets/signo-de-exclamacion.png" alt="Icono de advertencia"/> 
+            <img src="assets/signo-de-exclamacion.png" alt="Icono de advertencia" /> 
             Solo letras minúsculas y sin acentos</p>
           <div class="botones">
           <button onclick="encriptar()" id="boton-encriptar">Encriptar</button>
@@ -43,7 +45,17 @@
         <button onclick="copiar()" id="boton-copiar">Copiar</button>
       </section>
   </main>
-  <footer><p>&copy; Leonel Piedrabuena - 2024</p></footer>
+  <footer>
+    <p>&copy; Leonel Piedrabuena - 2024</p>
+    <div class="social">
+      <a href="https://github.com/DevLpb" target="_blank">
+        <img src="/assets/github-mark.svg" alt="Logo de GitHub" /
+        ></a>
+      <a href="https://www.linkedin.com/in/leonelpb04/" target="_blank">
+        <img src="/assets/logo-linkedin.svg" alt="Logo de LinkedIn" />
+      </a>
+    </div>
+  </footer>
   <script src="app.js"></script>
 </body>
 

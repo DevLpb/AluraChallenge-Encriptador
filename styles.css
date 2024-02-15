@@ -12,11 +12,13 @@
 * {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 body {
     margin: 0;
-    background-color: var(--colorFondo);
+    background: var(--colorFondo);
+    transition: background-color 0.5s ease;
 }
 
 .container {
@@ -57,10 +59,12 @@ header {
     border: none;
     outline: none;
     margin-top: 15%;
+    transition: color 0.5s ease;
 }
-#texto-entrada::placeholder {
+#texto-entrante::placeholder {
     color: var(--colorPrimario);
     font-weight: 400;
+    
 }
 
 .opciones {
@@ -71,6 +75,7 @@ header {
     display:flex;
     font-size: 16px;
     color: var(--colorSecundario);
+    transition: color 0.5s ease;
 }
 
 #advertencia > img {
@@ -89,15 +94,21 @@ header {
     width: 45%;
     padding: 24px;
     border-radius: 24px;
+    font-size: 18px;
     transition: 0.5s all;
+}
+#boton-encriptar:hover, #boton-desencriptar:hover, #boton-copiar:hover {
+    cursor: pointer;
 }
 #boton-encriptar:active, #boton-desencriptar:active, #boton-copiar:active {
     transform: scale(1.05);
 }
 
 #boton-encriptar {
+    border: 0;
     background-color: var(--colorPrimario);
     color: var(--colorTerciario);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 #boton-encriptar:hover {
     background-color: var(--colorPrimarioHover);
@@ -107,6 +118,7 @@ header {
     background-color: transparent;
     border: 1px solid var(--colorPrimario);
     color: var(--colorPrimario);
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 #boton-desencriptar:hover {
     background-color: var(--colorTerciarioHover);
@@ -118,6 +130,7 @@ header {
     background-color: transparent;
     justify-content: center; 
     display: none;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
 #boton-copiar:hover {
@@ -138,6 +151,7 @@ header {
     background-color: var(--colorTerciario);
     box-shadow: 0px 24px 32px -8px var(--colorSombra);
     width: 30%;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 #texto-saliente {
@@ -152,15 +166,18 @@ header {
     resize: none;
     border: none;
     outline: none;
+    transition: color 0.5s ease;
 }
 
 #mensaje h2 {
     font-weight: 700;
     color: var(--colorSecundarioStrong);
+    transition: color 0.5s ease;
 }
 #mensaje p {
     color: var(--colorSecundario);
     font-weight: 400;
+    transition: color 0.5s ease;
 }
 
 #figura {
@@ -171,8 +188,20 @@ header {
 
 footer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     font-size: 18px;
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+    height: 60px;
+    align-items: center;
+}
+.social img{
+    height: 50px;
+    width: 50px;
 }
 
 /* --------------- Estilos extra para botón switch de cambio de tema --------------- */

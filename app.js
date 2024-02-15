@@ -121,8 +121,29 @@ function desencriptar() {
       navigator.clipboard.writeText(textoSaliente.value);
     }
 
-    /* Función extra para cambiar de tema */
+    /* Función extra para cambiar de tema */    
+    // Al hacer click en el checkbox (estilizado para verse como slider), llama a la función para cambiar el tema. Dependiendo del estado del checkbox se muestra uno u otro tema.
     function cambiarTema() {
-      //test//
-      document.documentElement.style.setProperty('--colorPrimario', "#FFFFFF");
+      let checkbox = document.getElementById("checkbox");
+      if (checkbox.checked) {
+      let gradient = 'linear-gradient(270deg, rgba(26,20,112,1) 0%, rgba(0,212,255,1) 100%)';
+      document.documentElement.style.setProperty('--colorFondo', gradient);
+      document.documentElement.style.setProperty('--colorPrimario', "#001326cc");
+      document.documentElement.style.setProperty('--colorPrimarioHover', "#04658e");
+      document.documentElement.style.setProperty('--colorSecundario', "#ffffff");
+      document.documentElement.style.setProperty('--colorSecundarioStrong', "#ffffff");
+      document.documentElement.style.setProperty('--colorTerciario', "#01d4ff5c");
+      document.documentElement.style.setProperty('--colorTerciarioHover', "#04658e");
+      document.documentElement.style.setProperty('--colorSombra', "#00e8ff4f");
     }
+    else {
+      document.documentElement.style.setProperty('--colorFondo', "#F3F5FC");
+      document.documentElement.style.setProperty('--colorPrimario', "#0A3871");
+      document.documentElement.style.setProperty('--colorPrimarioHover', "#072B61");
+      document.documentElement.style.setProperty('--colorSecundario', "#495057");
+      document.documentElement.style.setProperty('--colorSecundarioStrong', "#343A40");
+      document.documentElement.style.setProperty('--colorTerciario', "#FFFFFF");
+      document.documentElement.style.setProperty('--colorTerciarioHover', "#D8DFE8");
+      document.documentElement.style.setProperty('--colorSombra', "#00000014");
+    }
+  }
