@@ -11,16 +11,17 @@
 </head>
 
 <body>
-  <main class="container">
-      <header>
-        <a href="https://www.aluracursos.com/" target="_blank">
-          <img src="assets/Logo.svg" id="logo" alt="Logo de Alura" />
-        </a>
-        <label class="switch">
-          <input onchange="cambiarTema()" id="checkbox" type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </header>
+  <div class="container">
+    <header>
+      <a href="https://www.aluracursos.com/" target="_blank">
+        <img src="assets/Logo.svg" id="logo" alt="Logo de Alura" />
+      </a>
+      <label class="switch">
+        <input onchange="cambiarTema()" id="checkbox" type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </header>
+    <main>
       <section class="seccion-entrada">
         <textarea id="texto-entrante" rows="10" placeholder="Ingrese el texto"></textarea>
         <div class="opciones">
@@ -49,13 +50,14 @@
     <p>&copy; Leonel Piedrabuena - 2024</p>
     <div class="social">
       <a href="https://github.com/DevLpb" target="_blank">
-        <img src="assets/github-mark.svg" alt="Logo de GitHub" /
-        ></a>
+        <img src="assets/github-mark.svg" alt="Logo de GitHub" />
+      </a>
       <a href="https://www.linkedin.com/in/leonelpb04/" target="_blank">
         <img src="assets/logo-linkedin.svg" alt="Logo de LinkedIn" />
       </a>
     </div>
   </footer>
+  </div>
   <script src="app.js"></script>
 </body>
 
